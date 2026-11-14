@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Club & MAN 2 Samarinda</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://uploads.onecompiler.io/44vd4mynh/1784199760024/Mathematics%20Club%20MAN%202%20Samarinda%20Logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <style>
+        /* Pengaturan Scroll Presisi */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px; 
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* PALET WARNA DESAIN UTAMA MATHEMATICS CLUB */
+        :root {
+            --math-blue-light: #4d8dff;
+            --math-blue-mid: #225cd6;
+            --math-blue-dark: #112b66;
+            --math-gold: #f39c12;
+            --math-gold-hover: #e67e22;
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-bg-hover: rgba(255, 255, 255, 0.20);
+            --glass-border: rgba(255, 255, 255, 0.25);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top center, var(--math-blue-light) 0%, var(--math-blue-mid) 45%, var(--math-blue-dark) 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        /* HEADER & NAVIGATION FIXES */
+        .header {
+            transition: all 0.5s;
+            z-index: 997;
+            padding: 2px 0;
+            background: rgba(17, 43, 102, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .header .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .header .logo-man {
+            height: 36px;
+            width: 36px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .header .logo-math {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .header .logo-group img:hover {
+            transform: scale(1.08);
+        }
+
+        .navmenu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navmenu ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navmenu a {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .navmenu a:hover, .navmenu .active {
+            color: var(--math-gold);
+            background: rgba(17, 43, 102, 0.85);
+            border-color: var(--math-gold);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-size: 1.4rem;
+            padding: 6px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-nav-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--math-gold);
+            border-color: var(--math-gold);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            position: relative;
+            min-height: 85vh;
+            background: linear-gradient(135deg, rgba(34, 92, 214, 0.75), rgba(17, 43, 102, 0.88)), 
+                        url('https://uploads.onecompiler.io/44vd4mynh/44vgpurym/gambar_2026-08-15_221215943.png') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 80px;
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 100vw;
+            overflow: hidden;
+        }
+
+        /* EFEK SIMBOL & RUMUS MATEMATIKA DI BACKGROUND HERO */
+        .math-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .math-symbol {
+            position: absolute;
+            bottom: -60px;
+            text-shadow: 0 0 12px currentColor;
+            font-family: 'Roboto', 'Poppins', serif, sans-serif;
+            font-weight: 600;
+            user-select: none;
+            white-space: nowrap;
+            animation: floatMath 15s linear infinite;
+        }
+
+        @keyframes floatMath {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.85);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.55;
+            }
+            85% {
+                opacity: 0.55;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg) scale(1.15);
+                opacity: 0;
+            }
+        }
+
+        .hero-branding {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+        .hero-logo-center {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(243,156,18,0.5));
+            transition: transform 0.4s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-logo-center:hover {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--math-gold);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        /* GLASSMORPHISM CARDS */
+        .glass-box {
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .glass-box:hover {
+            transform: translateY(-5px);
+            background: var(--glass-bg-hover);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h3 {
+            font-size: 0.95rem;
+            color: var(--math-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--math-gold);
+            border-radius: 2px;
+        }
+
+        /* PROGRAM CARDS */
+        .program-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .program-card:hover {
+            background: var(--glass-bg-hover);
+            border-color: var(--math-gold);
+            transform: translateY(-5px);
+        }
+
+        .program-icon {
+            font-size: 2.4rem;
+            color: var(--math-gold);
+            margin-bottom: 15px;
+        }
+
+        /* MATHEMATICS CLUB HUB SECTIONS */
+        .hub-row {
+            padding: 35px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hub-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .hub-image-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: rgba(17, 43, 102, 0.4);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .hub-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15);
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 75%, transparent 100%); 
+        }
+
+        .hub-image-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(243, 156, 18, 0.25);
+            border-color: var(--math-gold);
+        }
+
+        .hub-image-container:hover img {
+            transform: scale(1.0);
+        }
+
+        .interactive-svg-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(17, 43, 102, 0.55);
+            padding: 0;
+        }
+
+        .math-btn {
+            background: var(--math-gold);
+            color: #ffffff !important;
+            padding: 13px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .math-btn:hover {
+            background: var(--math-gold-hover);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.45);
+            transform: translateY(-2px);
+        }
+
+        /* TIMELINE / AKTIVITAS WRAPPER */
+        .timeline-wrapper {
+            position: relative;
+            padding-left: 30px;
+            border-left: none;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 3px;
+            width: 16px;
+            height: 16px;
+            background: var(--math-gold);
+            border-radius: 50%;
+            border: 3px solid var(--math-blue-dark);
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* QUOTE SECTION */
+        .quote-wrapper {
+            position: relative;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--math-gold);
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 850px;
+            margin: 0 auto 20px;
+        }
+
+        .quote-author {
+            font-weight: 700;
+            color: var(--math-gold);
+            letter-spacing: 1px;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .quote-role {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin: 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--math-blue-dark);
+            padding: 30px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        @keyframes popupEffect {
+            0% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.015);
+                box-shadow: 0 0 35px rgba(243, 156, 18, 0.5);
+                border-color: var(--math-gold);
+            }
+            100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+        }
+
+        .section-popup {
+            animation: popupEffect 1.2s ease-in-out;
+        }
+
+        @keyframes slideDownDropdown {
+            0% {
+                opacity: 0;
+                transform: translateY(-15px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes slideUpDropdown {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-15px) scale(0.95);
+            }
+        }
+
+        @keyframes slideDownItem {
+            0% {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.3rem; }
+            
+            .mobile-nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .navmenu {
+                display: none;
+                position: absolute;
+                top: 75px;
+                right: 15px;
+                background: rgba(17, 43, 102, 0.95);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid var(--glass-border);
+                border-radius: 16px;
+                padding: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+                z-index: 998;
+                min-width: 210px;
+            }
+
+            .navmenu.navbar-mobile-active {
+                display: block;
+                animation: slideDownDropdown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            }
+
+            .navmenu.navbar-mobile-closing {
+                display: block !important;
+                animation: slideUpDropdown 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            }
+
+            .navmenu.navbar-mobile-active ul li {
+                opacity: 0;
+                animation: slideDownItem 0.3s ease forwards;
+            }
+
+            .navmenu.navbar-mobile-active ul li:nth-child(1) { animation-delay: 0.05s; }
+            .navmenu.navbar-mobile-active ul li:nth-child(2) { animation-delay: 0.10s; }
+            .navmenu.navbar-mobile-active ul li:nth-child(3) { animation-delay: 0.15s; }
+            .navmenu.navbar-mobile-active ul li:nth-child(4) { animation-delay: 0.20s; }
+            .navmenu.navbar-mobile-active ul li:nth-child(5) { animation-delay: 0.25s; }
+            .navmenu.navbar-mobile-active ul li:nth-child(6) { animation-delay: 0.30s; }
+
+            .navmenu ul {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                padding: 0;
+                margin: 0;
+            }
+
+            .navmenu a {
+                font-size: 0.85rem;
+                padding: 10px 14px;
+                width: 100%;
+                justify-content: flex-start;
+                border-radius: 10px;
+            }
+
+            .hub-image-container { height: 300px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-logo-center { width: 250px; height: 250px; }
+            .hero-title { font-size: 1.8rem; }
+            .quote-text { font-size: 1rem; }
+            .hub-image-container { height: 280px; }
+            
+            .container {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            
+            #program .row {
+                --bs-gutter-x: 12px;
+                --bs-gutter-y: 12px;
+            }
+            #program .program-card {
+                padding: 20px 14px;
+            }
+            #program .program-icon {
+                font-size: 2.1rem;
+                margin-bottom: 12px;
+            }
+            #program h4 {
+                font-size: 0.96rem;
+                margin-bottom: 8px !important;
+            }
+            #program p {
+                font-size: 0.82rem;
+                line-height: 1.5;
+            }
+            .hub-row .col-lg-6 {
+                text-align: center;
+            }
+
+            .hub-row .math-btn {
+                margin-bottom: 20px;
+            }
+
+            .hub-row {
+                margin-bottom: 20px !important;
+                padding: 20px 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <!-- HEADER NAVIGATION BAR -->
+<header id="header" class="header fixed-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+        <a href="#" class="logo-group text-decoration-none">
+            <img src="https://uploads.onecompiler.io/44vd4mynh/1784287355935/logo-man.webp" alt="Logo MAN 2 Samarinda" class="logo-man">
+            <img src="https://uploads.onecompiler.io/44vd4mynh/1784199760024/Mathematics%20Club%20MAN%202%20Samarinda%20Logo.png" alt="Logo Mathematics Club" class="logo-math">
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-grid-fill"></i>
+        </button>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#hero" class="active">Beranda</a></li>
+                <li><a href="#profil">Visi & Misi</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#alur">Aktivitas</a></li>
+                <li><a href="#motivasi">Inspirasi</a></li>
+                <li><a href="#math-club">Math Club Hub</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <!-- Overlay Angka, Rumus & Simbol Matematika Floating Background (BERWARNA-WARNI NEON) -->
+            <div class="math-bg-overlay">
+                <span class="math-symbol" style="left: 4%; font-size: 2.2rem; animation-duration: 14s; animation-delay: 0s; color: #00FF66;">∑(x²)</span>
+                <span class="math-symbol" style="left: 12%; font-size: 3.2rem; animation-duration: 18s; animation-delay: 2s; color: #FFE600;">π</span>
+                <span class="math-symbol" style="left: 22%; font-size: 1.8rem; animation-duration: 13s; animation-delay: 4s; color: #A066FF;">f(x) = ∫ dx</span>
+                
+                <!-- RUMUS POLINOMIAL -->
+                <span class="math-symbol" style="left: 18%; font-size: 2.1rem; animation-duration: 16s; animation-delay: 3s; color: #00F0FF;">P(x) = a<sub>n</sub>x<sup>n</sup> + ... + a<sub>1</sub>x + a<sub>0</sub></span>
+                
+                <span class="math-symbol" style="left: 32%; font-size: 2.6rem; animation-duration: 16s; animation-delay: 1s; color: #FF8800;">√x</span>
+                <span class="math-symbol" style="left: 42%; font-size: 1.9rem; animation-duration: 15s; animation-delay: 5s; color: #00E5FF;">a² + b² = c²</span>
+                
+                <!-- RUMUS KOMBINASI -->
+                <span class="math-symbol" style="left: 48%; font-size: 2.1rem; animation-duration: 19s; animation-delay: 1s; color: #FFE600;">C(n, k) = n! / (k!(n - k)!)</span>
+                
+                <span class="math-symbol" style="left: 52%; font-size: 3.4rem; animation-duration: 20s; animation-delay: 3s; color: #FF66CC;">∞</span>
+                <span class="math-symbol" style="left: 62%; font-size: 2.1rem; animation-duration: 13s; animation-delay: 6s; color: #50E3C2;">e<sup>iπ</sup> + 1 = 0</span>
+                <span class="math-symbol" style="left: 72%; font-size: 2.8rem; animation-duration: 17s; animation-delay: 2.5s; color: #FF3366;">Δx</span>
+                
+                <!-- RUMUS PELUANG -->
+                <span class="math-symbol" style="left: 76%; font-size: 2.1rem; animation-duration: 15s; animation-delay: 4s; color: #FF66CC;">P(A) = n(A) / n(S)</span>
+                
+                <span class="math-symbol" style="left: 82%; font-size: 2rem; animation-duration: 11s; animation-delay: 4.5s; color: #00FF66;">sin²θ + cos²θ = 1</span>
+                <span class="math-symbol" style="left: 90%; font-size: 2.5rem; animation-duration: 19s; animation-delay: 1.5s; color: #A066FF;">lim<sub>x→∞</sub></span>
+                <span class="math-symbol" style="left: 8%; font-size: 2.3rem; animation-duration: 15s; animation-delay: 7s; color: #FF8800;">3.14159</span>
+                <span class="math-symbol" style="left: 58%; font-size: 2.4rem; animation-duration: 22s; animation-delay: 8s; color: #00F0FF;">x = (-b ± √Δ) / 2a</span>
+                <span class="math-symbol" style="left: 85%; font-size: 2.4rem; animation-duration: 14s; animation-delay: 9s; color: #FFE600;">α + β = γ</span>
+                <span class="math-symbol" style="left: 28%; font-size: 2.5rem; animation-duration: 17s; animation-delay: 10s; color: #FF3366;">E = mc²</span>
+                <span class="math-symbol" style="left: 68%; font-size: 2.2rem; animation-duration: 16s; animation-delay: 11s; color: #50E3C2;">log(x)</span>
+            </div>
+
+            <div class="container text-center position-relative" style="z-index: 2;" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="hero-branding">
+                    <img src="https://uploads.onecompiler.io/44vd4mynh/1784199760024/Mathematics%20Club%20MAN%202%20Samarinda%20Logo.png" alt="Logo Math Club" class="hero-logo-center">
+                </div>
+                <h1 class="hero-title">Mathematics Club</h1>
+                <div class="hero-subtitle">MAN 2 Samarinda | Unlock the Universe of Numbers</div>
+                <p class="lead text-light mx-auto" style="max-width: 750px; opacity: 0.95; font-weight: 300;">
+                    Wadah Eksplorasi Matematika, Pembinaan Lomba Matematika, dan Mencetak Siswa Berprestasi Dalam Bidang Matematika.
+                </p>
+
+                <div class="mt-4 d-flex justify-content-center gap-3">
+                    <a href="#math-club" class="btn btn-warning btn-lg fw-bold px-4 py-2" style="background: var(--math-gold); border: none; color:#fff;">Akses Math Club</a>
+                    <a href="#program" class="btn btn-outline-light btn-lg fw-bold px-4 py-2">Lihat Program</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTIONS CONTAINER -->
+        <div class="container my-5">
+                
+            <!-- 1. VISI & MISI DUAL BOX -->
+            <section id="profil" class="py-4" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="glass-box">
+                            <h3 class="h4 text-white fw-bold mb-3"><i class="bi bi-eye-fill me-2 text-warning"></i>Visi</h3>
+                            <p class="lh-lg opacity-95 m-0" style="font-size: 0.95rem;">Menjadi wadah unggul dalam mengembangkan potensi, minat, dan bakat siswa MAN 2 Samarinda di bidang matematika.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="glass-box">
+                            <h3 class="h4 text-white fw-bold mb-3"><i class="bi bi-bullseye me-2 text-warning"></i>Misi</h3>
+                            <p class="lh-lg opacity-95 m-0" style="font-size: 0.95rem;">Mengembangkan pembelajaran interaktif, mencetak prestasi dalam ajang lomba matematika, serta membina solidaritas antar anggota.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PROGRAM UNGGULAN -->
+            <section id="program" class="py-4" data-aos="fade-up">
+                <div class="section-title">
+                    <h3>Aktivitas & Fokus</h3>
+                    <h2>Program Math Club</h2>
+                </div>
+
+                <div class="row g-3 g-md-4">
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="program-card text-center h-100">
+                            <i class="bi bi-trophy-fill program-icon"></i>
+                            <h4 class="h6 fw-bold text-white mb-2">Pembinaan Olimpiade</h4>
+                            <p class="small opacity-90 m-0">Penggemblengan intensif materi dan soal-soal untuk persiapan kompetisi matematika (seperti KSM, OSN/KSN, KOSSMI, OMI, Dll...).</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="program-card text-center h-100">
+                            <i class="bi bi-controller program-icon"></i>
+                            <h4 class="h6 fw-bold text-white mb-2">Math Games Logic</h4>
+                            <p class="small opacity-90 m-0">Asah logika interaktif melalui puzzle games matematika yang seru dan menantang.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="program-card text-center h-100">
+                            <i class="bi bi-lightbulb-fill program-icon"></i>
+                            <h4 class="h6 fw-bold text-white mb-2">Problem Solving Club</h4>
+                            <p class="small opacity-90 m-0">Forum diskusi dan bedah soal-soal sulit matematika sekolah maupun kompetisi lainnya.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="program-card text-center h-100">
+                            <i class="bi bi-megaphone-fill program-icon"></i>
+                            <h4 class="h6 fw-bold text-white mb-2">Informasi & Partisipasi Lomba</h4>
+                            <p class="small opacity-90 m-0">Mencari, mengkurasi, dan memfasilitasi pendaftaran serta keikutsertaan anggota dalam berbagai ajang kompetisi matematika.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JADWAL RUTIN PERTEMUAN -->
+            <section class="py-3" data-aos="zoom-in">
+                <div class="glass-box text-center">
+                    <h3 class="h4 text-white fw-bold mb-2"><i class="bi bi-calendar-event me-2 text-warning"></i>Jadwal Pertemuan Rutin</h3>
+                    <p class="fs-5 mb-1" style="font-size: 1.15rem;">Setiap Hari Sabtu, Pukul 10.00 - 12.00 WITA</p>
+                    <p class="fw-bold mb-0 text-warning">Lokasi: Laboratorium Agama MAN 2, Samarinda</p>
+                </div>
+            </section>
+
+            <!-- 3. SECTION APA SAJA YANG DIBAHAS / DILAKUKAN DI CLUB -->
+            <section id="alur" class="py-4" data-aos="fade-up">
+                <div class="glass-box">
+                    <div class="section-title mb-4">
+                        <h3>Kegiatan Rutin</h3>
+                        <h2>Apa Saja yang Biasa Dilakukan di Club?</h2>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <p class="opacity-95 lh-lg mb-4" style="font-size: 1.05rem;">
+                                Ragam aktivitas di setiap pertemuan dirancang fleksibel dan dinamis tergantung topik, kadang berfokus mendalam pada satu materi, atau dikombinasikan secara seru.
+                            </p>
+                            <div class="timeline-wrapper">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <h4 class="timeline-title">Bahas Materi</h4>
+                                    <p class="timeline-desc">Membedah konsep, teori dasar, rumus, serta trik cepat terkait topik matematika tertentu secara interaktif.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <h4 class="timeline-title">Latihan Soal</h4>
+                                    <p class="timeline-desc">Anggota mencoba menguji pemahaman dengan mengerjakan variasi soal pilihan baik secara mandiri maupun berkelompok.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <h4 class="timeline-title">Bahas Soal</h4>
+                                    <p class="timeline-desc">Diskusi bersama untuk mengupas tuntas langkah-langkah penyelesaian dan berbagai cara alternatif memecahkan soal sulit.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <h4 class="timeline-title">Games</h4>
+                                    <p class="timeline-desc">Sesi seru pengasah logika berupa teka-teki angka, puzzle matematika, atau kuis kompetitif untuk mencairkan suasana.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hub-image-container" style="height: 380px;">
+                                <img src="https://uploads.onecompiler.io/44vd4mynh/44vgpurym/gambar_2026-08-15_221215943.png" alt="Ilustrasi Kegiatan Club">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SECTION KATA INSPIRASI / MOTIVASI -->
+            <section id="motivasi" class="py-4" data-aos="fade-up">
+                <div class="glass-box">
+                    <div class="quote-wrapper">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="quote-text">
+                            "Matematika bukan sekadar menghafal rumus, melainkan tentang pola pikir bernalar kritis, memecahkan masalah kompleks, dan menemukan keindahan pola di alam semesta."
+                        </p>
+                        <h4 class="quote-author">Mathematics Club MAN 2 Samarinda</h4>
+                        <p class="quote-role">Pembina & Pengurus Ekstrakurikuler</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. MATHEMATICS CLUB HUB -->
+            <section id="math-club" class="py-5" data-aos="fade-up">
+                <div class="section-title">
+                    <h3>Akses Cepat</h3>
+                    <h2>Mathematics Club Hub</h2>
+                </div>
+
+                <div class="container px-0">
+                    <!-- 1. Pendaftaran -->
+                    <div class="hub-row" data-aos="fade-up">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <p class="text-uppercase text-warning fw-bold mb-2" style="letter-spacing: 2px; font-size: 0.9rem;">Pendaftaran Anggota</p>
+                                <h3 class="text-white fw-bold mb-4" style="font-size: 2.1rem; line-height: 1.25;">Pendaftaran Anggota Baru</h3>
+                                <p class="opacity-95 mb-4" style="font-size: 1.12rem; line-height: 1.8;">
+                                    Bergabunglah bersama komunitas kami untuk mengembangkan potensi matematika, mengikuti olimpiade, dan memperluas relasi positif. Daftarkan dirimu segera melalui tautan di bawah ini.
+                                </p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiYiWJ8FjsaOnVvc9pR9-jJeqpWfjYg8zouXj-tH8FJ7LdqA/viewform" class="math-btn" target="_blank" rel="noopener noreferrer">Daftar Sekarang <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="hub-image-container">
+                                    <img src="https://uploads.onecompiler.io/44vd4mynh/44yap7fsp/gambar_2026-08-16_193857005.png" alt="Pendaftaran">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Data Siswa & Pengurus -->
+                    <div class="hub-row" data-aos="fade-up">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-1">
+                                <p class="text-uppercase text-warning fw-bold mb-2" style="letter-spacing: 2px; font-size: 0.9rem;">Struktur & Keanggotaan</p>
+                                <h3 class="text-white fw-bold mb-4" style="font-size: 2.1rem; line-height: 1.25;">Data Siswa & Pengurus</h3>
+                                <p class="opacity-95 mb-4" style="font-size: 1.12rem; line-height: 1.8;">
+                                    Transparansi struktur kepengurusan dan daftar lengkap anggota aktif Mathematics Club MAN 2 Samarinda periode berjalan dapat diakses secara transparan di sini.
+                                </p>
+                                <a href="https://datasiswadanpengurusmathclub.oneapp.dev" class="math-btn" target="_blank" rel="noopener noreferrer">Lihat Data <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="hub-image-container">
+                                    <img src="https://uploads.onecompiler.io/44vd4mynh/1786839501118/WhatsApp%20Image%202026-08-15%20at%2023.13.00.jpeg" alt="Dokumentasi Data Pengurus">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Games -->
+                    <div class="hub-row" data-aos="fade-up">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <p class="text-uppercase text-warning fw-bold mb-2" style="letter-spacing: 2px; font-size: 0.9rem;">Asah Logika</p>
+                                <h3 class="text-white fw-bold mb-4" style="font-size: 2.1rem; line-height: 1.25;">Mathematics Games Logic</h3>
+                                <p class="opacity-95 mb-4" style="font-size: 1.12rem; line-height: 1.8;">
+                                    Asah kemampuan berpikir kritis dan ketajaman logika melalui berbagai puzzle serta permainan matematika interaktif yang seru dan menantang.
+                                </p>
+                                <a href="https://mathematicsgamesmathclub.oneapp.dev" class="math-btn" target="_blank" rel="noopener noreferrer">Mainkan Games <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="hub-image-container">
+                                    <img src="https://uploads.onecompiler.io/44vd4mynh/44vpj5xnw/gambar_2026-08-22_124413938.png" alt="Dokumentasi Games">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Dokumentasi -->
+                    <div class="hub-row" data-aos="fade-up">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-1">
+                                <p class="text-uppercase text-warning fw-bold mb-2" style="letter-spacing: 2px; font-size: 0.9rem;">Galeri Kegiatan</p>
+                                <h3 class="text-white fw-bold mb-4" style="font-size: 2.1rem; line-height: 1.25;">Dokumentasi & Galeri Kegiatan</h3>
+                                <p class="opacity-95 mb-4" style="font-size: 1.12rem; line-height: 1.8;">
+                                    Kumpulan potret keseruan kegiatan rutin, pelatihan olimpiade, hingga momen kebersamaan anggota Mathematics Club terekam dalam galeri ini.
+                                </p>
+                                <a href="https://fotodokumentasimathclub.oneapp.dev" class="math-btn" target="_blank" rel="noopener noreferrer">Lihat Galeri <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="hub-image-container">
+                                    <img src="https://uploads.onecompiler.io/44vd4mynh/44yap7fsp/Fotodokumentasi.jpeg" alt="Dokumentasi Galeri">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <!-- 5. Kritik & Saran -->
+                        <div class="hub-row" data-aos="fade-up">
+                            <div class="row align-items-center g-5">
+                                <div class="col-lg-6 order-lg-2">
+                                    <p class="text-uppercase text-warning fw-bold mb-2" style="letter-spacing: 2px; font-size: 0.9rem;">Evaluasi & Aspirasi</p>
+                                    <h3 class="text-white fw-bold mb-4" style="font-size: 2.1rem; line-height: 1.25;">Kritik & Saran</h3>
+                                    <p class="opacity-95 mb-4" style="font-size: 1.12rem; line-height: 1.8;">
+                                        Sampaikan masukan, ide kreatif, atau evaluasi demi kemajuan dan perkembangan Mathematics Club ke depannya melalui tautan ini.
+                                    </p>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeksDRWb_XqL7OlNStz6-FZRby52GQzc2LedPyvkLjgL4p2Zg/viewform" class="math-btn" target="_blank" rel="noopener noreferrer">Berikan Masukan <i class="bi bi-arrow-right ms-2"></i></a>
+                                </div>
+                                <div class="col-lg-6 order-lg-1">
+                                    <div class="hub-image-container interactive-svg-card">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+                                          <defs>
+                                            <linearGradient id="feedbackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                              <stop offset="0%" stop-color="#f39c12"/>
+                                              <stop offset="100%" stop-color="#e67e22"/>
+                                            </linearGradient>
+                                            <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+                                              <feGaussianBlur stdDeviation="12" result="blur"/>
+                                              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                            </filter>
+                                          </defs>
+                                          
+                                          <rect x="200" y="50" width="400" height="290" rx="28" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.5" filter="url(#glowEffect)"/>
+
+                                          <g transform="translate(315, 80)">
+                                            <rect width="170" height="170" rx="42" fill="url(#feedbackGrad)" filter="url(#glowEffect)"/>
+                                            <path d="M 45 50 h 80 a 16 16 0 0 1 16 16 v 50 a 16 16 0 0 1 -16 16 h -40 l -22 20 v -20 h -18 a 16 16 0 0 1 -16 -16 v -50 a 16 16 0 0 1 16 -16 z" fill="none" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
+                                            <circle cx="70" cy="85" r="7" fill="#ffffff"/>
+                                            <circle cx="85" cy="85" r="7" fill="#ffffff"/>
+                                            <circle cx="100" cy="85" r="7" fill="#ffffff"/>
+                                          </g>
+
+                                          <g transform="translate(250, 270)" filter="url(#glowEffect)">
+                                            <rect width="300" height="46" rx="23" fill="rgba(17, 43, 102, 0.9)" stroke="url(#feedbackGrad)" stroke-width="2"/>
+                                            <text x="150" y="29" font-family="'Poppins', sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">BERIKAN MASUKAN</text>
+                                          </g>
+
+                                          <text x="400" y="390" font-family="'Poppins', sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">KRITIK &amp; SARAN</text>
+                                          <text x="400" y="425" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#f39c12" text-anchor="middle" letter-spacing="1">EVALUASI &amp; ASPIRASI CLUB</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Instagram Hub -->
+                        <div class="hub-row" data-aos="fade-up">
+                            <div class="row align-items-center g-5">
+                                <div class="col-lg-6 order-lg-1">
+                                    <p class="text-uppercase text-warning fw-bold mb-2" style="letter-spacing: 2px; font-size: 0.9rem;">Sosial Media</p>
+                                    <h3 class="text-white fw-bold mb-4" style="font-size: 2.1rem; line-height: 1.25;">Ikuti Instagram Kami</h3>
+                                    <p class="opacity-95 mb-4" style="font-size: 1.12rem; line-height: 1.8;">
+                                        Jangan lewatkan info terbaru dan pengumuman kegiatan dengan mengikuti akun resmi Instagram kami.
+                                    </p>
+                                    <a href="https://www.instagram.com/mathclubman2smr/" class="math-btn" target="_blank" rel="noopener noreferrer">Follow Instagram <i class="bi bi-arrow-right ms-2"></i></a>
+                                </div>
+                                <div class="col-lg-6 order-lg-2">
+                                    <div class="hub-image-container interactive-svg-card">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+                                          <defs>
+                                            <linearGradient id="igGradClassic" x1="0%" y1="100%" x2="100%" y2="0%">
+                                              <stop offset="0%" stop-color="#f09433"/>
+                                              <stop offset="25%" stop-color="#e6683c"/>
+                                              <stop offset="50%" stop-color="#dc2743"/>
+                                              <stop offset="75%" stop-color="#cc2366"/>
+                                              <stop offset="100%" stop-color="#bc1888"/>
+                                            </linearGradient>
+
+                                            <filter id="glowEffect2" x="-20%" y="-20%" width="140%" height="140%">
+                                              <feGaussianBlur stdDeviation="12" result="blur"/>
+                                              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                            </filter>
+                                          </defs>
+
+                                          <rect x="200" y="50" width="400" height="290" rx="28" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.5" filter="url(#glowEffect2)"/>
+
+                                          <g transform="translate(315, 80)">
+                                            <rect width="170" height="170" rx="42" fill="url(#igGradClassic)" filter="url(#glowEffect2)"/>
+                                            <rect x="25" y="25" width="120" height="120" rx="30" fill="none" stroke="#ffffff" stroke-width="9"/>
+                                            <circle cx="85" cy="85" r="32" fill="none" stroke="#ffffff" stroke-width="9"/>
+                                            <circle cx="125" cy="45" r="9" fill="#ffffff"/>
+                                          </g>
+
+                                          <g transform="translate(250, 270)" filter="url(#glowEffect2)">
+                                            <rect width="300" height="46" rx="23" fill="rgba(17, 43, 102, 0.9)" stroke="url(#igGradClassic)" stroke-width="2"/>
+                                            <text x="150" y="29" font-family="'Poppins', sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">@mathclubman2smr</text>
+                                          </g>
+
+                                          <text x="400" y="390" font-family="'Poppins', sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">FOLLOW OUR INSTAGRAM</text>
+                                          <text x="400" y="425" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#f39c12" text-anchor="middle" letter-spacing="1">INFO TERBARU &amp; DOKUMENTASI KEGIATAN</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container text-center small opacity-75">
+            <p class="m-0">© 2026 Mathematics Club MAN 2 Samarinda. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Vendor Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            window.scrollTo(0, 0);
+
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: false,
+                    offset: 50,      
+                    disable: false   
+                });
+            }
+
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const navmenu = document.getElementById('navmenu');
+
+            if (mobileNavToggle && navmenu) {
+                mobileNavToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const icon = this.querySelector('i');
+
+                    if (navmenu.classList.contains('navbar-mobile-active')) {
+                        navmenu.classList.remove('navbar-mobile-active');
+                        navmenu.classList.add('navbar-mobile-closing');
+                        if (icon) {
+                            icon.classList.remove('bi-x-lg');
+                            icon.classList.add('bi-grid-fill');
+                        }
+                    } else {
+                        navmenu.classList.remove('navbar-mobile-closing');
+                        navmenu.classList.add('navbar-mobile-active');
+                        if (icon) {
+                            icon.classList.remove('bi-grid-fill');
+                            icon.classList.add('bi-x-lg');
+                        }
+                    }
+                });
+               
+                navmenu.addEventListener('animationend', function(e) {
+                    if (navmenu.classList.contains('navbar-mobile-closing')) {
+                        navmenu.classList.remove('navbar-mobile-closing');
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!navmenu.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+                        if (navmenu.classList.contains('navbar-mobile-active')) {
+                            navmenu.classList.remove('navbar-mobile-active');
+                            navmenu.classList.add('navbar-mobile-closing');
+                            const icon = mobileNavToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('bi-x-lg');
+                                icon.classList.add('bi-grid-fill');
+                            }
+                        }
+                    }
+                });
+            }
+
+            const navLinks = document.querySelectorAll('.navmenu a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.startsWith('#') && targetId !== '#hero') {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.classList.remove('section-popup');
+                            void targetSection.offsetWidth; 
+                            targetSection.classList.add('section-popup');
+
+                            setTimeout(() => {
+                                targetSection.classList.remove('section-popup');
+                            }, 1200); 
+                        }
+                    }
+                });
+            });
+        });
+
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            const isF12 = e.key === 'F12' || e.keyCode === 123;
+            const isInspect = e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73);
+            const isViewSource = e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85);
+
+            if (isF12 || isInspect || isViewSource) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
